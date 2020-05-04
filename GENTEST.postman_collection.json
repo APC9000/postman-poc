@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "a885ef55-9600-4ab6-84da-01c70d5cd4fa",
+		"name": "GENTEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://dev.api.ubc.ca/hcm/v5/workers?page=1&pageSize=10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f2eadbd9-704f-46eb-ae8e-b737ac85e024",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "c0e7dfaecbdf4e898359b3b80fdf5bac",
+						"type": "text"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "98CA24551e6b41279567072B1b8aAA63",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev.api.ubc.ca/hcm/v5/workers?page=1&pageSize=10",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"api",
+						"ubc",
+						"ca"
+					],
+					"path": [
+						"hcm",
+						"v5",
+						"workers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				},
+				"description": "GET worker endpoint for Human Capital Managment (HCM).\nParameters are page and pageSize.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.ubc.ca/psrv-exp/v2/workers-exp/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "367ac35e-dc8d-4bc6-ad43-77267a75696b",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "03afe9ef061641d9a81d34df6e928553",
+						"type": "text"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "5b2b737A881a43698251e6fcbA14c893",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev.api.ubc.ca/psrv-exp/v2/workers-exp/employee_id::1033727",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"api",
+						"ubc",
+						"ca"
+					],
+					"path": [
+						"psrv-exp",
+						"v2",
+						"workers-exp",
+						"employee_id::1033727"
+					]
+				},
+				"description": "Get a specific worker using the parameter {workerReference}. Worker reference maps to employeeID from HCM's Get Worker response.\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
