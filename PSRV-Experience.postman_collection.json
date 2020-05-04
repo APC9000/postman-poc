@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "004b821e-2b47-4db1-9816-72d5473f67cd",
+		"name": "PSRV-Experience",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://api.ubc.ca/psrv-exp/v2/workers-exp/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bafe644d-d219-4d10-b773-05b445795277",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "03afe9ef061641d9a81d34df6e928553",
+						"type": "text"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "5b2b737A881a43698251e6fcbA14c893",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev.api.ubc.ca/psrv-exp/v2/workers-exp/employee_id::1033727",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"api",
+						"ubc",
+						"ca"
+					],
+					"path": [
+						"psrv-exp",
+						"v2",
+						"workers-exp",
+						"employee_id::1033727"
+					]
+				},
+				"description": "Get a specific worker using the parameter {workerReference}. Worker reference maps to employeeID from HCM's Get Worker response.\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

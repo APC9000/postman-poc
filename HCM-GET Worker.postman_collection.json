@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "a339a787-ce71-41f4-a3a5-10bb68bbe4d4",
+		"name": "HCM-GET Worker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://dev.api.ubc.ca/hcm/v5/workers?page=1&pageSize=10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4616031c-0c3a-4270-ab5d-9b3f56b1ddc3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-client-id",
+						"value": "c0e7dfaecbdf4e898359b3b80fdf5bac",
+						"type": "text"
+					},
+					{
+						"key": "x-client-secret",
+						"value": "98CA24551e6b41279567072B1b8aAA63",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dev.api.ubc.ca/hcm/v5/workers?page=1&pageSize=10",
+					"protocol": "https",
+					"host": [
+						"dev",
+						"api",
+						"ubc",
+						"ca"
+					],
+					"path": [
+						"hcm",
+						"v5",
+						"workers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "10"
+						}
+					]
+				},
+				"description": "GET worker endpoint for Human Capital Managment (HCM).\nParameters are page and pageSize.\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
